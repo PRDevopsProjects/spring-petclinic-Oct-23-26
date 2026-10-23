@@ -1,0 +1,21 @@
+pipeline{
+agent {
+         label 'Agent-SPC'
+      }
+   stages{
+     stage('git'){
+          steps{
+              git branch: 'main', url: 'https://github.com/PRDevopsProjects/spring-petclinic-Oct-23-26.git'
+          
+               }
+
+         }
+     stage('spc build'){
+        steps{
+           sh 'mvn clean package'
+            }
+         }
+
+    }
+
+}
