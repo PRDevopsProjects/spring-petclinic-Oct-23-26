@@ -13,7 +13,9 @@ agent {
      stage('spc build'){
         steps{
            sh 'mvn clean package'
+           sh 'pwd'
             }
+
          }
 
     }
